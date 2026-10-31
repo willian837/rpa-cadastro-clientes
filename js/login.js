@@ -4,7 +4,7 @@
   const LOGIN_KEY = 'portal_rpa_logado';
   const THEME_KEY = 'portal_rpa_theme';
   const LOGIN_USER = 'demo';
-  const LOGIN_PASS = 'demo1234';
+  const LOGIN_PASS = 'RpaTeste!Clientes-7fQ2';
 
   const loginForm = document.getElementById('loginForm');
   const loginUsuario = document.getElementById('loginUsuario');
