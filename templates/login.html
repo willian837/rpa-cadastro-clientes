@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Acesse o Portal de Recepção de Dados.">
+  <meta name="theme-color" content="#edf2ff">
+  <title>Entrar | Portal RPA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css?v=2">
+  <script src="../js/login.js" defer></script>
+</head>
+<body>
+  <main class="login-layout">
+    <section class="login-card" aria-labelledby="login-title">
+      <a class="login-brand" href="login.html" aria-label="Portal RPA - página de login">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <path d="M8 21h8m-4-4v4"></path>
+          </svg>
+        </span>
+        <span>Portal RPA</span>
+      </a>
+
+      <div class="login-heading">
+        <p class="eyebrow">ÁREA RESTRITA</p>
+        <h1 id="login-title">Bem-vindo de volta</h1>
+        <p>Acesse sua conta para continuar no painel de cadastros.</p>
+      </div>
+
+      <form id="loginForm" autocomplete="on">
+        <div class="field-item">
+          <label for="loginUsuario">Usuário</label>
+          <input id="loginUsuario" type="text" name="usuario" placeholder="Digite seu usuário" autocomplete="username" required autofocus>
+        </div>
+        <div class="field-item">
+          <label for="loginSenha">Senha</label>
+          <input id="loginSenha" type="password" name="senha" placeholder="Digite sua senha" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="login-button">
+          <span>Entrar no painel</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14m-7-7 7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+
+      <p id="loginError" class="login-error" role="alert" aria-live="assertive"></p>
+      <p class="login-footnote">Ambiente seguro para automação e recepção de dados.</p>
+      <p class="login-company">WillTech Automações &amp; Serviços em TI</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma de recepção de cadastros para automação RPA.">
+  <title>Portal de Cadastros - Automação RPA</title>
+  
+  <!-- Fontes Modernas: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/style.css?v=6">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Cabeçalho do Sistema -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <div>
+          <h1 class="system-title">Portal de Recepção de Dados</h1>
+          <p class="system-desc">Ambiente para testes em automação RPA e entrada de registros</p>
+        </div>
+      </div>
+
+      <div class="header-status">
+        <span class="live-pill">
+          <span class="pulse-dot"></span> Pronto para Automação
+        </span>
+        <button id="btn_limpar_tudo" class="btn-ghost-danger" title="Limpar todos os registros recebidos" type="button">
+          Limpar Registros
+        </button>
+        <button id="btn_theme_toggle" class="btn-ghost-danger theme-toggle" type="button" title="Alternar tema" aria-label="Alternar tema">
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+          </svg>
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+          </svg>
+        </button>
+        <button id="btn_logout" class="btn-ghost-danger icon-action" type="button" title="Sair da sessão" aria-label="Sair da sessão">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 17l5-5-5-5m5 5H3"></path>
+            <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Área Principal Dividida -->
+    <main class="grid-layout">
+      <!-- PAINEL 1: FORMULÁRIO DE ENTRADA -->
+      <section class="panel-box">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <span class="step-badge">Etapa 1</span>
+            <h2 class="panel-title">Formulário de Cadastro</h2>
+          </div>
+          <span class="info-tag"></span>
+        </div>
+
+        <form id="form_cliente" autocomplete="off" onsubmit="event.preventDefault();">
+          <div class="form-grid">
+            <!-- Linha 1: Tipo e Nome -->
+            <div class="form-row-2">
+              <div class="field-item col-sm">
+                <label for="tipocliente">Tipo *</label>
+                <select id="tipocliente" name="tipocliente" required>
+                  <option value="" disabled selected>Tipo</option>
+                  <option value="PJ">PJ</option>
+                  <option value="PF">PF</option>
+                </select>
+              </div>
+
+              <div class="field-item col-lg">
+                <label for="nomerazaosocial">Nome / Razão Social *</label>
+                <input type="text" id="nomerazaosocial" name="nomerazaosocial" placeholder="Nome ou Razão Social" required>
+              </div>
+            </div>
+
+            <!-- Linha 2: CPF/CNPJ e CEP -->
+            <div class="form-row-2">
+              <div class="field-item">
+                <label for="cpfcnpj">CPF ou CNPJ *</label>
+                <input type="text" id="cpfcnpj" name="cpfcnpj" placeholder="CPF ou CNPJ" required>
+              </div>
+
+              <div class="field-item">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="00000-000">
+              </div>
+            </div>
+
+            <!-- Linha 3: Estado e Cidade -->
+            <div class="form-row-2">
+              <div class="field-item col-sm">
+                <label for="estado">Estado *</label>
+                <select id="estado" name="estado" required>
+                  <option value="" disabled selected>UF</option>
+                  <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+                  <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+                  <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+                  <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+                  <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+                  <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+                  <option value="RJ">RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+                  <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+                  <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                </select>
+              </div>
+
+              <div class="field-item col-lg">
+                <label for="cidade">Cidade *</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Nome da cidade" required>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" id="botaoadicionarcliente" class="btn-primary-action">
+            <span>Cadastrar Cliente</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+          <button type="button" id="btn_limpar_campos" class="btn-secondary-action">
+            Limpar campos
+          </button>
+        </form>
+
+        <div id="feedback_message" class="toast-feedback" role="status" aria-live="polite"></div>
+      </section>
+
+      <!-- PAINEL 2: TABELA DE REGISTROS RECEBIDOS -->
+      <section class="panel-box">
+        <div class="panel-header">
+          <div class="panel-title-group">
+            <span class="step-badge step-badge-teal">Etapa 2</span>
+            <h2 class="panel-title">Registros Recebidos</h2>
+          </div>
+          <div class="counter-pill">
+            Total: <strong id="clientes_count">0</strong>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table" id="tabela_cadastrados">
+            <thead>
+              <tr>
+                <th>Tipo Cliente</th>
+                <th>Nome Razão Social</th>
+                <th>CPF / CNPJ</th>
+                <th>CEP</th>
+                <th>Estado</th>
+                <th>Cidade</th>
+              </tr>
+            </thead>
+            <tbody id="corpo_tabela">
+              <!-- Inicia completamente vazio -->
+            </tbody>
+          </table>
+
+          <div class="empty-state" id="empty_placeholder">
+            <div class="empty-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+            </div>
+            <h3>Nenhum registro recebido</h3>
+            <p>Os clientes enviados pelo seu robô de automação ou formulário aparecerão aqui em tempo real.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/app.js?v=3"></script>
+</body>
+</html>
