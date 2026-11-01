@@ -6,6 +6,7 @@ Aplicação web estática para testes de cadastro e recepção de dados de clien
 
 - Cadastro de pessoa física (PF) ou jurídica (PJ).
 - Campos para nome/razão social, CPF/CNPJ, CEP, estado e cidade.
+- Confirmação obrigatória no formulário de que os dados usados são fictícios e apenas para teste.
 - Consulta dos cadastros na tabela, com opção de limpar registros.
 - Armazenamento no `localStorage` do navegador.
 - Interface adaptável e opções de tema.
@@ -38,6 +39,7 @@ https://willian837.github.io/rpa-cadastro-clientes/templates/login.html
 ## Avisos
 
 - Este projeto é uma demonstração de front-end: o login `demo` / `RpaTeste!Clientes-7fQ2` é validado no próprio JavaScript e **não oferece segurança real**. Não use senhas reais, dados pessoais ou informações confidenciais.
+- A confirmação de dados fictícios é apenas um aviso de teste; não é consentimento, não registra uma base legal e não torna o sistema adequado para dados pessoais reais ou, por si só, compatível com a LGPD.
 - Os registros são salvos somente no navegador e no perfil/origem do site em que foram criados. Não são enviados a um servidor, compartilhados com outros usuários ou sincronizados entre dispositivos. Limpar os dados do navegador pode apagá-los.
 - A API `window.RPA` só fica disponível na página do painel depois do login de demonstração.
 

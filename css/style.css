@@ -365,6 +365,43 @@ input:focus, select:focus {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
+.test-data-confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-alt);
+}
+
+.test-data-confirmation input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  padding: 0;
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+}
+
+.test-data-confirmation label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.test-data-confirmation label span {
+  display: block;
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
 input::placeholder {
   color: #475569;
 }

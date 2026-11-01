@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="../css/style.css?v=6">
+  <link rel="stylesheet" href="../css/style.css?v=7">
 </head>
 <body>
   <div class="app-container">
@@ -123,6 +123,14 @@
                 <input type="text" id="cidade" name="cidade" placeholder="Nome da cidade" required>
               </div>
             </div>
+          </div>
+
+          <div class="test-data-confirmation">
+            <input type="checkbox" id="confirmacao_dados_ficticios" name="confirmacao_dados_ficticios" required>
+            <label for="confirmacao_dados_ficticios">
+              Confirmo que estou usando dados fictícios apenas para fins de teste.
+              <span>Não informe dados reais de clientes. Esta confirmação não é um aceite de tratamento de dados pela LGPD.</span>
+            </label>
           </div>
 
           <button type="submit" id="botaoadicionarcliente" class="btn-primary-action">
