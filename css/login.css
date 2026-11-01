@@ -125,6 +125,42 @@ input:focus {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
+.login-test-data {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 12px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #f8fafc;
+}
+
+.login-test-data input[type="checkbox"] {
+  flex: 0 0 auto;
+  width: 16px;
+  min-height: 16px;
+  margin: 2px 0 0;
+  padding: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.login-test-data label {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.login-test-data label span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
 .login-button {
   display: flex;
   width: 100%;
@@ -214,6 +250,11 @@ body.theme-dark input {
 
 body.theme-dark input:focus {
   border-color: var(--accent);
+}
+
+body.theme-dark .login-test-data {
+  border-color: var(--border);
+  background: #0e1525;
 }
 
 body.theme-dark .login-footnote {

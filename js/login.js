@@ -9,6 +9,7 @@
   const loginForm = document.getElementById('loginForm');
   const loginUsuario = document.getElementById('loginUsuario');
   const loginSenha = document.getElementById('loginSenha');
+  const confirmacaoDadosFicticios = document.getElementById('confirmacaoDadosFicticios');
   const loginError = document.getElementById('loginError');
 
   function init() {
@@ -27,6 +28,13 @@
     event.preventDefault();
     const usuario = loginUsuario.value.trim().toLowerCase();
     const senha = loginSenha.value.trim();
+
+    if (!confirmacaoDadosFicticios.checked) {
+      loginError.textContent = 'Confirme que usará apenas dados fictícios para entrar.';
+      loginError.classList.add('show');
+      confirmacaoDadosFicticios.focus();
+      return;
+    }
 
     if (usuario === LOGIN_USER && senha === LOGIN_PASS) {
       localStorage.setItem(LOGIN_KEY, 'true');
